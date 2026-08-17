@@ -21,8 +21,16 @@ void cadastrarAluno(struct Aluno *a) {
     scanf("%f", &a->nota);
 }
 
+void exibirAluno(struct Aluno a) {
+    printf("\n--- Dados do Aluno ---\n");
+    printf("Nome: %s\n", a.nome);
+    printf("Idade: %d anos\n", a.idade);
+    printf("Nota: %.2f\n", a.nota);
+}
+
 int main() {
     struct Aluno aluno;
     cadastrarAluno(&aluno);
+    exibirAluno(aluno);
     return 0;
 }
