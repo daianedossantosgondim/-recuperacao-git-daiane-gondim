@@ -8,7 +8,21 @@ struct Aluno {
     float nota;
 };
 
+void cadastrarAluno(struct Aluno *a) {
+    printf("--- Cadastro de Aluno ---\n");
+    printf("Digite o nome do aluno: ");
+    fgets(a->nome, 50, stdin);
+    a->nome[strcspn(a->nome, "\n")] = 0;
+
+    printf("Digite a idade do aluno: ");
+    scanf("%d", &a->idade);
+
+    printf("Digite a nota do aluno: ");
+    scanf("%f", &a->nota);
+}
+
 int main() {
-    printf("Sistema de Cadastro de Alunos\n");
+    struct Aluno aluno;
+    cadastrarAluno(&aluno);
     return 0;
 }
